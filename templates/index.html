@@ -10,7 +10,7 @@
         content="width=device-width, initial-scale=1.0"
     >
 
-    <title>AI Medical Chatbot</title>
+    <title>AI Medical Assistant</title>
 
     <link
         rel="stylesheet"
@@ -22,208 +22,329 @@
 
 <body>
 
-    <div class="chat-container">
+    <div class="app-container">
 
 
         <!-- ================================= -->
-        <!-- LEFT SIDEBAR - CHAT HISTORY -->
+        <!-- TOP HEADER -->
         <!-- ================================= -->
 
-        <div class="chat-sidebar">
+        <header class="app-header">
 
-            <div class="sidebar-header">
+            <div class="brand">
 
-                <strong>💬 Chat History</strong>
+                <div class="brand-icon">
+                    ⚕️
+                </div>
 
-            </div>
+                <div>
 
+                    <h1>
+                        AI Medical Assistant
+                    </h1>
 
-            <button
-                onclick="newChat()"
-                class="sidebar-new-chat"
-            >
-                ➕ New Chat
-            </button>
-
-
-            <div id="chat-history-list">
-
-                <!-- Previous chats will appear here -->
-
-            </div>
-
-        </div>
-
-
-
-        <!-- ================================= -->
-        <!-- RIGHT SIDE - CHAT AREA -->
-        <!-- ================================= -->
-
-        <div class="chat-area">
-
-
-            <!-- Heading -->
-
-            <h1>
-                AI Medical Assistant
-            </h1>
-
-<div class="medical-disclaimer">
-    <!-- ================================= -->
-<!-- HOW IT WORKS -->
-<!-- ================================= -->
-
-<div class="how-it-works">
-
-    <h2>🔍 How It Works</h2>
-
-    <div class="workflow">
-
-        <div class="workflow-step">
-
-            <div class="workflow-icon">
-                🛡️
-            </div>
-
-            <h3>Safety Check</h3>
-
-            <p>
-                Checks the message for potentially
-                serious emergency symptoms.
-            </p>
-
-        </div>
-
-
-        <div class="workflow-step">
-
-            <div class="workflow-icon">
-                🧠
-            </div>
-
-            <h3>NLP Analysis</h3>
-
-            <p>
-                Extracts symptoms and duration
-                from the user's message.
-            </p>
-
-        </div>
-
-
-        <div class="workflow-step">
-
-            <div class="workflow-icon">
-                🤖
-            </div>
-
-            <h3>ML Classification</h3>
-
-            <p>
-                Identifies a possible symptom
-                pattern using a Random Forest model.
-            </p>
-
-        </div>
-
-
-        <div class="workflow-step">
-
-            <div class="workflow-icon">
-                💬
-            </div>
-
-            <h3>AI Response</h3>
-
-            <p>
-                Generates general health information
-                using the AI assistant.
-            </p>
-
-        </div>
-
-    </div>
-
-</div>
-
-    <strong>⚕️ Medical Information Disclaimer</strong>
-
-    <p>
-        This AI Medical Assistant provides general health
-        information for educational purposes only.
-        It does not provide medical diagnosis, treatment,
-        or prescriptions.
-    </p>
-
-    <p>
-        If you are experiencing a medical emergency,
-        contact your local emergency medical service
-        or seek immediate medical attention.
-    </p>
-
-</div>
-
-
-
-            <!-- Chat Messages -->
-
-            <div id="chat-box">
-
-                <div class="bot-message">
-
-                    Hello! 👋 I am your AI Medical Assistant.
+                    <p>
+                        Your Health • Our Priority 🌿
+                    </p>
 
                 </div>
 
             </div>
 
+        </header>
+
+
+
+        <!-- ================================= -->
+        <!-- MAIN LAYOUT -->
+        <!-- ================================= -->
+
+        <div class="main-layout">
 
 
             <!-- ================================= -->
-            <!-- INPUT AREA -->
+            <!-- CHAT HISTORY SIDEBAR -->
             <!-- ================================= -->
 
-            <div class="input-area">
+            <aside class="chat-sidebar">
 
-                <input
-                    type="text"
-                    id="user-input"
-                    placeholder="Describe your symptoms..."
-                >
+                <div class="sidebar-header">
 
+                    <span>💬</span>
 
-                <button
-                    onclick="sendMessage()"
-                >
-                    Send
-                </button>
+                    <strong>
+                        Chat History
+                    </strong>
+
+                </div>
 
 
                 <button
                     onclick="newChat()"
-                    class="new-chat-btn"
+                    class="sidebar-new-chat"
                 >
                     ➕ New Chat
                 </button>
 
 
-                <button
-                    onclick="clearChat()"
-                    class="clear-btn"
-                >
-                    🗑️ Clear Chat
-                </button>
+                <div id="chat-history-list">
 
-            </div>
+                    <!-- Previous chats will appear here -->
 
+                </div>
+
+            </aside>
+
+
+
+            <!-- ================================= -->
+            <!-- MAIN CHAT AREA -->
+            <!-- ================================= -->
+
+            <main class="chat-area">
+
+
+                <!-- ================================= -->
+                <!-- WELCOME BANNER -->
+                <!-- ================================= -->
+
+                <section class="welcome-banner">
+
+                    <div class="welcome-text">
+
+                        <h2>
+                            Hello! 👋
+                        </h2>
+
+                        <h3>
+                            I’m your
+                            <span>AI Medical Assistant</span>
+                        </h3>
+
+                        <p>
+                            Get general health information,
+                            understand your symptoms,
+                            and stay informed.
+                        </p>
+
+                    </div>
+
+
+                    <div class="welcome-icon">
+                        🤖
+                    </div>
+
+                </section>
+
+
+
+                <!-- ================================= -->
+                <!-- HOW IT WORKS -->
+                <!-- ================================= -->
+
+                <section class="how-it-works">
+
+                    <div class="section-heading">
+
+                        <h2>
+                            💡 How It Works
+                        </h2>
+
+                        <p>
+                            A combination of safety checks,
+                            NLP, machine learning and AI
+                            to assist you better.
+                        </p>
+
+                    </div>
+
+
+                    <div class="workflow">
+
+
+                        <div class="workflow-step">
+
+                            <div class="workflow-icon">
+                                🛡️
+                            </div>
+
+                            <h3>
+                                Safety Check
+                            </h3>
+
+                            <p>
+                                Checks the message for potentially
+                                serious emergency symptoms.
+                            </p>
+
+                        </div>
+
+
+
+                        <div class="workflow-step">
+
+                            <div class="workflow-icon">
+                                🧠
+                            </div>
+
+                            <h3>
+                                NLP Analysis
+                            </h3>
+
+                            <p>
+                                Extracts symptoms and duration
+                                from the user's message.
+                            </p>
+
+                        </div>
+
+
+
+                        <div class="workflow-step">
+
+                            <div class="workflow-icon">
+                                📊
+                            </div>
+
+                            <h3>
+                                ML Classification
+                            </h3>
+
+                            <p>
+                                Identifies a possible symptom
+                                pattern using a Random Forest model.
+                            </p>
+
+                        </div>
+
+
+
+                        <div class="workflow-step">
+
+                            <div class="workflow-icon">
+                                💬
+                            </div>
+
+                            <h3>
+                                AI Response
+                            </h3>
+
+                            <p>
+                                Generates general health information
+                                using the AI assistant.
+                            </p>
+
+                        </div>
+
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- ================================= -->
+                <!-- MEDICAL DISCLAIMER -->
+                <!-- ================================= -->
+
+                <section class="medical-disclaimer">
+
+                    <div class="disclaimer-title">
+
+                        <span>
+                            ⚕️
+                        </span>
+
+                        <strong>
+                            Medical Information Disclaimer
+                        </strong>
+
+                    </div>
+
+
+                    <p>
+                        This AI Medical Assistant provides general
+                        health information for educational purposes only.
+                        It does not provide medical diagnosis, treatment,
+                        or prescriptions.
+                    </p>
+
+
+                    <p>
+                        If you are experiencing a medical emergency,
+                        contact your local emergency medical service
+                        or seek immediate medical attention.
+                    </p>
+
+                </section>
+
+
+
+                <!-- ================================= -->
+                <!-- CHAT BOX -->
+                <!-- ================================= -->
+
+                <section id="chat-box">
+
+                    <div class="bot-message">
+
+                        Hello! 👋 I am your AI Medical Assistant.
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- ================================= -->
+                <!-- INPUT AREA -->
+                <!-- ================================= -->
+
+                <div class="input-area">
+
+                    <input
+                        type="text"
+                        id="user-input"
+                        placeholder="Describe your symptoms..."
+                    >
+
+
+                    <button
+                        onclick="sendMessage()"
+                    >
+                        📤 Send
+                    </button>
+
+
+                    <button
+                        onclick="newChat()"
+                        class="new-chat-btn"
+                    >
+                        ➕ New Chat
+                    </button>
+
+
+                    <button
+                        onclick="clearChat()"
+                        class="clear-btn"
+                    >
+                        🗑️ Clear Chat
+                    </button>
+
+                </div>
+
+
+            </main>
 
         </div>
 
     </div>
 
 
-    <!-- JavaScript -->
+
+    <!-- ================================= -->
+    <!-- JAVASCRIPT -->
+    <!-- ================================= -->
 
     <script
         src="{{ url_for('static', filename='script.js') }}"
