@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>AI Medical Chatbot</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+
+</head>
+
+
+<body>
+
+    <div class="chat-container">
+
+
+        <!-- ================================= -->
+        <!-- LEFT SIDEBAR - CHAT HISTORY -->
+        <!-- ================================= -->
+
+        <div class="chat-sidebar">
+
+            <div class="sidebar-header">
+
+                <strong>💬 Chat History</strong>
+
+            </div>
+
+
+            <button
+                onclick="newChat()"
+                class="sidebar-new-chat"
+            >
+                ➕ New Chat
+            </button>
+
+
+            <div id="chat-history-list">
+
+                <!-- Previous chats will appear here -->
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ================================= -->
+        <!-- RIGHT SIDE - CHAT AREA -->
+        <!-- ================================= -->
+
+        <div class="chat-area">
+
+
+            <!-- Heading -->
+
+            <h1>
+                AI Medical Assistant
+            </h1>
+
+<div class="medical-disclaimer">
+    <!-- ================================= -->
+<!-- HOW IT WORKS -->
+<!-- ================================= -->
+
+<div class="how-it-works">
+
+    <h2>🔍 How It Works</h2>
+
+    <div class="workflow">
+
+        <div class="workflow-step">
+
+            <div class="workflow-icon">
+                🛡️
+            </div>
+
+            <h3>Safety Check</h3>
+
+            <p>
+                Checks the message for potentially
+                serious emergency symptoms.
+            </p>
+
+        </div>
+
+
+        <div class="workflow-step">
+
+            <div class="workflow-icon">
+                🧠
+            </div>
+
+            <h3>NLP Analysis</h3>
+
+            <p>
+                Extracts symptoms and duration
+                from the user's message.
+            </p>
+
+        </div>
+
+
+        <div class="workflow-step">
+
+            <div class="workflow-icon">
+                🤖
+            </div>
+
+            <h3>ML Classification</h3>
+
+            <p>
+                Identifies a possible symptom
+                pattern using a Random Forest model.
+            </p>
+
+        </div>
+
+
+        <div class="workflow-step">
+
+            <div class="workflow-icon">
+                💬
+            </div>
+
+            <h3>AI Response</h3>
+
+            <p>
+                Generates general health information
+                using the AI assistant.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+    <strong>⚕️ Medical Information Disclaimer</strong>
+
+    <p>
+        This AI Medical Assistant provides general health
+        information for educational purposes only.
+        It does not provide medical diagnosis, treatment,
+        or prescriptions.
+    </p>
+
+    <p>
+        If you are experiencing a medical emergency,
+        contact your local emergency medical service
+        or seek immediate medical attention.
+    </p>
+
+</div>
+
+
+
+            <!-- Chat Messages -->
+
+            <div id="chat-box">
+
+                <div class="bot-message">
+
+                    Hello! 👋 I am your AI Medical Assistant.
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ================================= -->
+            <!-- INPUT AREA -->
+            <!-- ================================= -->
+
+            <div class="input-area">
+
+                <input
+                    type="text"
+                    id="user-input"
+                    placeholder="Describe your symptoms..."
+                >
+
+
+                <button
+                    onclick="sendMessage()"
+                >
+                    Send
+                </button>
+
+
+                <button
+                    onclick="newChat()"
+                    class="new-chat-btn"
+                >
+                    ➕ New Chat
+                </button>
+
+
+                <button
+                    onclick="clearChat()"
+                    class="clear-btn"
+                >
+                    🗑️ Clear Chat
+                </button>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+    <!-- JavaScript -->
+
+    <script
+        src="{{ url_for('static', filename='script.js') }}"
+    ></script>
+
+
+</body>
+
+</html>
