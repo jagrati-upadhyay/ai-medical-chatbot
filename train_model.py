@@ -12,10 +12,10 @@ import joblib
 
 
 # --------------------------------
-# 1. Load Dataset
+# 1. Load Expanded Dataset
 # --------------------------------
 
-data = pd.read_csv("data/symptoms.csv")
+data = pd.read_csv("data/symptoms_expanded.csv")
 
 print("Dataset loaded successfully.")
 print("Dataset shape:", data.shape)
@@ -49,7 +49,8 @@ X_train, X_test, y_train, y_test = train_test_split(
 
 model = RandomForestClassifier(
     n_estimators=100,
-    random_state=42
+    random_state=42,
+    class_weight="balanced"
 )
 
 
@@ -80,7 +81,13 @@ print(accuracy)
 
 
 print("\nClassification Report:")
-print(classification_report(y_test, y_pred, zero_division=0))
+print(
+    classification_report(
+        y_test,
+        y_pred,
+        zero_division=0
+    )
+)
 
 
 print("\nConfusion Matrix:")

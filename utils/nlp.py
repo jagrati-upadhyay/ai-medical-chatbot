@@ -6,7 +6,7 @@ SYMPTOM_SYNONYMS = {
     "fever": [
         "fever",
         "high temperature",
-        "temperature",
+        "high temp",
         "feeling hot",
         "feel hot",
         "body feels hot"
@@ -162,7 +162,37 @@ def extract_symptoms(message):
 
     found_symptoms = []
 
+    # --------------------------------
+    # Fever-specific negative cases
+    # --------------------------------
+
+    fever_negative_patterns = [
+        "low temperature",
+        "low temp",
+        "temperature is low",
+        "temperature is below normal",
+        "below normal temperature",
+        "no fever",
+        "don't have fever",
+        "do not have fever",
+        "without fever"
+    ]
+
+    fever_is_negative = any(
+        pattern in message
+        for pattern in fever_negative_patterns
+    )
+
+    # --------------------------------
+    # Extract symptoms
+    # --------------------------------
+
     for symptom, synonyms in SYMPTOM_SYNONYMS.items():
+
+        # Do not detect fever when the user
+        # explicitly says low temperature or no fever
+        if symptom == "fever" and fever_is_negative:
+            continue
 
         for phrase in synonyms:
 
