@@ -232,9 +232,14 @@ if (data.symptoms && data.symptoms.length > 0) {
         }
 
 
-        chatBox.appendChild(botMessage);
+       chatBox.appendChild(botMessage);
 
-        chatBox.scrollTop = chatBox.scrollHeight;
+        setTimeout(() => {
+            botMessage.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+        }, 100);
 
     })
 
